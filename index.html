@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLSys 2026 竞赛项目 - 进度总览</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f5576c 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+            color: #333;
+        }
+        .container { 
+            max-width: 1000px; 
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+        h1 { 
+            font-size: 3em; 
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .subtitle {
+            font-size: 1.3em;
+            opacity: 0.95;
+        }
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+        }
+        .project-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+        .project-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .project-card:nth-child(1) .project-title {
+            color: #667eea;
+        }
+        .project-card:nth-child(2) .project-title {
+            color: #f5576c;
+        }
+        .project-desc {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 20px;
+            border-top: 2px solid #f0f0f0;
+        }
+        .meta-item {
+            text-align: center;
+        }
+        .meta-label {
+            font-size: 0.85em;
+            color: #999;
+            margin-bottom: 5px;
+        }
+        .meta-value {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .summary {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .summary-title {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+        .summary-item {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        .summary-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        .summary-label {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            opacity: 0.9;
+        }
+        @media (max-width: 768px) {
+            .projects {
+                grid-template-columns: 1fr;
+            }
+            .summary-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 MLSys 2026 竞赛项目</h1>
+            <div class="subtitle">Gary 的 AI Agent 开发进度看板</div>
+        </div>
+
+        <div class="projects">
+            <a href="mlsys-dashboard.html" class="project-card">
+                <div class="project-icon">🎯</div>
+                <div class="project-title">MLSys Graph Scheduling</div>
+                <div class="project-desc">
+                    使用 Gemini 2.0 Flash 优化 DAG 调度问题。当前已完成基础框架，测试通过 5 和 19 节点的 benchmark。
+                </div>
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <div class="meta-label">完成度</div>
+                        <div class="meta-value" style="color: #667eea;">40%</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">测试通过</div>
+                        <div class="meta-value" style="color: #10b981;">2/5</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">预期奖金</div>
+                        <div class="meta-value" style="color: #f59e0b;">$1-5k</div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="flashinfer-dashboard.html" class="project-card">
+                <div class="project-icon">⚡</div>
+                <div class="project-title">FlashInfer Kernel Gen</div>
+                <div class="project-desc">
+                    AI 驱动的 GPU kernel 生成器，针对 NVIDIA Blackwell B200。已验证基础生成能力，等待编译测试。
+                </div>
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <div class="meta-label">完成度</div>
+                        <div class="meta-value" style="color: #f5576c;">20%</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Kernel 生成</div>
+                        <div class="meta-value" style="color: #10b981;">1/3</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">预期奖品</div>
+                        <div class="meta-value" style="color: #f59e0b;">GPU</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="summary">
+            <div class="summary-title">📊 总体统计</div>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-value">2</div>
+                    <div class="summary-label">项目总数</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-value">30%</div>
+                    <div class="summary-label">平均完成度</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-value">$0</div>
+                    <div class="summary-label">总投入</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-value">$2-8k</div>
+                    <div class="summary-label">预期收益</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>最后更新: 2026-02-04 06:48 UTC</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">
+                由乐乐 (AI 助理) 自动生成 • GitHub: 
+                <a href="https://github.com/Gary-oak-Star" style="color: white; text-decoration: underline;">Gary-oak-Star</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
